@@ -146,6 +146,12 @@ while IFS=$'\t' read -r repo visibility default_branch; do
     continue
   fi
 
+  if [[ "$visibility" == "public" && "$DRY_RUN" != true ]]; then
+    echo "SKIP  $repo (public repo protected by PR policy; update via PR workflow)"
+    skipped=$((skipped + 1))
+    continue
+  fi
+
   echo "REPO  $repo [$visibility] branch=$default_branch"
 
   if put_file "$repo" "$default_branch" "AGENTS.md" "$REPO_ROOT/AGENTS.md" &&
