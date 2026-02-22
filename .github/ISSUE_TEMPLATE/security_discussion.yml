@@ -1,0 +1,23 @@
+name: Security discussion (non-vulnerability)
+description: Public discussion about security practices, docs, or architecture
+title: "[Security] "
+labels: ["security", "discussion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not submit vulnerabilities here. Use private disclosure via email in SECURITY.md.
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This is not a vulnerability report
+          required: true
+  - type: textarea
+    id: topic
+    attributes:
+      label: Security topic
+      description: Describe your security question, suggestion, or documentation request.
+    validations:
+      required: true

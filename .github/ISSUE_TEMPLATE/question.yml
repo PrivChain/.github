@@ -1,0 +1,29 @@
+name: Question
+description: Ask a usage or integration question
+title: "[Question] "
+labels: ["question"]
+body:
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic
+      options:
+        - Setup
+        - API
+        - SDK
+        - MCP
+        - Security
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Your question
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Include what you tried and relevant environment details.

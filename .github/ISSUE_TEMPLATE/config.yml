@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security Vulnerability (Private)
+    url: mailto:hello@privchain.io?subject=PrivChain%20Security%20Report
+    about: Report security vulnerabilities privately via email
+  - name: Project Stage and Status
+    url: https://privchain.io/#stage
+    about: Review current project stage and release-gate status
+  - name: General Support
+    url: mailto:hello@privchain.io
+    about: Contact maintainers for support and partner inquiries
