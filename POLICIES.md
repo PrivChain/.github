@@ -41,6 +41,32 @@ Protection baseline:
 - Block branch deletion
 - Enforce for admins
 
+### 4) Agent guidance baseline
+
+Canonical guidance is maintained in this repository:
+
+- `AGENTS.md`
+- `CLAUDE.md`
+- `agent-guidance/PRINCIPLES.md`
+- `agent-guidance/HEURISTICS.md`
+
+For consistency across org repositories, use:
+
+- `scripts/bootstrap-agent-guidance.sh` (dry-run by default)
+
+Examples:
+
+```bash
+# Preview changes for private repos only
+./scripts/bootstrap-agent-guidance.sh --org PrivChain
+
+# Apply to private repos
+./scripts/bootstrap-agent-guidance.sh --org PrivChain --apply
+
+# Apply to all repos (public + private)
+./scripts/bootstrap-agent-guidance.sh --org PrivChain --include-public --apply
+```
+
 ## Plan-based Limit
 
 Private repositories cannot currently enable branch protection/rulesets on the current GitHub plan.
