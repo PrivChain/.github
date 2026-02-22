@@ -63,9 +63,11 @@ Examples:
 # Apply to private repos
 ./scripts/bootstrap-agent-guidance.sh --org PrivChain --apply
 
-# Apply to all repos (public + private)
-./scripts/bootstrap-agent-guidance.sh --org PrivChain --include-public --apply
+# Preview all repos (public + private)
+./scripts/bootstrap-agent-guidance.sh --org PrivChain --include-public
 ```
+
+Note: public repositories with enforced PR branch protection are intentionally skipped in apply mode and should be updated through a standard PR flow.
 
 ## Plan-based Limit
 
