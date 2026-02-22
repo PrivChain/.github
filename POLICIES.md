@@ -46,6 +46,27 @@ Protection baseline:
 Private repositories cannot currently enable branch protection/rulesets on the current GitHub plan.
 GitHub API returns plan-gated responses for private-repo branch protection.
 
+## Automation
+
+This repo includes a repeatable script to apply the branch-protection baseline to default branches:
+
+- Script: `scripts/apply-main-branch-protection.sh`
+- Payload: `scripts/branch-protection-main.json`
+
+Dry run (no writes):
+
+```bash
+./scripts/apply-main-branch-protection.sh --org PrivChain --dry-run
+```
+
+Apply protections:
+
+```bash
+./scripts/apply-main-branch-protection.sh --org PrivChain
+```
+
+The script attempts all repositories and gracefully skips plan-gated private repositories when GitHub returns a 403 upgrade response.
+
 ## Recommended Next Step (After Plan Upgrade)
 
 After upgrading to a plan that supports private-repo protections, apply the same `main` protection baseline to:
@@ -59,3 +80,9 @@ After upgrading to a plan that supports private-repo protections, apply the same
 - `privchain-protocol`
 
 And optionally add organization rulesets for centralized governance and auditability.
+
+Post-upgrade command:
+
+```bash
+./scripts/apply-main-branch-protection.sh --org PrivChain
+```
